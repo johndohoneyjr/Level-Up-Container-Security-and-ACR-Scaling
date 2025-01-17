@@ -22,14 +22,6 @@ Please note that this project is released with a [Contributor Code of Conduct](h
 - Perform a [cursory search][issue-search] to see if a similar issue has already been submitted.
 - Make sure to use our [bug report][bug-report] or [feature request][feature-request] templates.
 
-### Related repositories
-
-This is the repository for Microsoft Defender for Cloud. Please ensure that you are opening issues in the right repository. Other repos you might be looking for:
-
-- [Azure Monitor Community](https://github.com/microsoft/AzureMonitorCommunity#azure-monitor-community) repo, with query, alerts, workbook samples.
-- [Azure Monitor Workbook Templates](https://github.com/microsoft/Application-Insights-Workbooks) repo - contains workbook templates shown in the workbook galleries for Azure Monitor workbooks
-- [Log Analytics Query Examples](https://github.com/MicrosoftDocs/LogAnalyticsExamples) repo - contains example log analytics queries
-- [Azure Sentinel](https://github.com/azure/azure-sentinel) repo - contains queries, dashboards, templates used by Azure Sentinel
 
 ## Recommended setup for contributing
 
@@ -45,7 +37,7 @@ When creating commits, always try to create useful commit messages explaining wh
 
 ## Pull Requests
 
-When creating a pull request, please create a good title, fill the description with content, and ideally, explain what your PR will change. Make sure to provide a [readme](https://github.com/Azure/Azure-Security-Center/wiki/Readme.md-Template) file so people will know what your artifact will do. Once your pull request is submitted, we will automatically verify you've signed the CLA agreement, and that your code passes a set of CI build tests.
+When creating a pull request, please create a good title, fill the description with content, and ideally, explain what your PR will change.
 
 [code-of-conduct]: https://opensource.microsoft.com/codeofconduct/
 [new-issue]: https://github.com/Azure/Microsoft-Defender-for-Cloud/issues/new
