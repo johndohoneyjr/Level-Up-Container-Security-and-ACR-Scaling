@@ -1,7 +1,6 @@
 # App Dev Level Up for Container Security and ACR Scaling
 
-![GitHub](https://img.shields.io/github/license/azure/Level-Up-Container-Security-and-ACR-Scaling?label=License&style=plastic)
-![GitHub last commit (branch)](https://img.shields.io/github/last-commit/azure/Microsoft-Defender-for-Cloud/main?label=Last%20commit&style=plastic)
+![GitHub License](https://img.shields.io/github/license/johndohoneyjr/Level-Up-Container-Security-and-ACR-Scaling)
 
 
 Welcome to the App Dev Level Up for Container Security and ACR Scaling
