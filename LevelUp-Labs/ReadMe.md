@@ -6,7 +6,7 @@ Our labs project help you get ramped up with Microsoft Defender for Containers a
 
 ## Modules
 
-[**Module 1 – Preparing the Environment**](https://github.com/Azure/Microsoft-Defender-for-Cloud/blob/main/Labs/Modules/Module-1-Preparing-the-Environment.md)
+[**Module 1 – Preparing the Environment**](https://github.com/johndohoneyjr/Level-Up-Container-Security-and-ACR-Scaling/blob/main/LevelUp-Labs/Modules/Module-1-Preparing-the-Environment.md)
 - [Creating an Azure Trial Subscription](./Modules/Module-1-Preparing-the-Environment.md#exercise-1-creating-an-azure-trial-subscription)
 - [Provisioning resources (automation)](./Modules/Module-1-Preparing-the-Environment.md#exercise-2-provisioning-resources)
 - [Enabling Microsoft Defender for Cloud](./Modules/Module-1-Preparing-the-Environment.md#exercise-3-enabling-azure-defender)
@@ -22,4 +22,4 @@ Our labs project help you get ramped up with Microsoft Defender for Containers a
 [**Module 4 – ACR Scaling for Zonal Availability**](https://github.com/Azure/Microsoft-Defender-for-Cloud/blob/main/Labs/Modules/Module-11-AWS.md)
 
 
-[**Begin the labs here >**](https://github.com/Azure/Microsoft-Defender-for-Cloud/blob/main/Labs/Modules/Module-1-Preparing-the-Environment.md)
+[**Begin the labs here >**](https://github.com/johndohoneyjr/Level-Up-Container-Security-and-ACR-Scaling/blob/main/LevelUp-Labs/Modules/Module-1-Preparing-the-Environment.md)

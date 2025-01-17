@@ -1,29 +1,16 @@
 # Module 1 – Preparing the Environment
 
-<p align="left"><img src="../Images/asc-labs-beginner.gif?raw=true"></p>
-
-#### 🎓 Level: 100 (Beginner)
 #### ⌛ Estimated time to complete this lab: 30 minutes
 
 ## Objectives
-Create a new Microsoft Account enable with Azure Trial Subscription 
 This section is intended to deploy Azure resources in an automated way to get you started quickly or in case you need to re-provision your environment.
 
 #### Prerequisites
 Before you start this lab, make sure you have the following prerequisites:
 - **Supported web browser** (Microsoft Edge, Google Chrome, Safari, Firefox Mozilla)
     - For using these labs, **we recommend to open an incognito/in-private browser session** on your machine and login to Azure Portal to avoid conflicts with existing Azure Subscriptions/environments if already being used.
- - **Microsoft Account** - If you do not have an existing account Sign-up to create a free account: https://signup.live.com
+ - **Microsoft Account** - Use your employee account
   
-
-### Exercise 1: Creating an Azure Trial Subscription
-
-To use these labs, you should have Azure Subscription Trial, this allows you to get:
-- **12 months of free products** - Get free access to popular products like virtual machines, storage, and databases in your first 30 days, and for 12 months after you upgrade your account to pay-as-you-go pricing.
-- £150 credit/$200 credit - Use your credit to experiment with any Azure service in your first 30 days - beyond the free product amounts.
-- **No automatic charges** – During the registration process, you should enter your credit card information to complete the identity verification process. 
-> ⚠️ Warning: you won't be charged unless you choose to upgrade the subscription.
-Before the end of your first 30 days, you'll be notified and have the chance to upgrade and start paying only for the resources you use beyond the free amounts.
 
 #### Instructions:
 1. Open an **In-Private** session in your web browser and navigate to https://azure.microsoft.com/en-us/free
@@ -34,10 +21,10 @@ Important - Make sure you are not logged in with your corporate user.
 5. At the **Try Azure for free** page, type in your details following the 4-steps (your profile, identity verification by phone, identity verification by card, agreement). Once you complete all steps, click on **Sign Up** button to complete the subscription creation process.
 6. On the **You’re ready to start with Azure** page, click on **Go to portal** button. Now you should have Azure Subscription named **Azure subscription 1** including owner permissions.
 
-### Exercise 2: Provisioning resources
+### Task 1: Provisioning resources
 
 > ❗ Important: <br>
-> You should also be accessing the Microsoft Defender for Cloud labs in the same private window. Otherwise, link from the lab will be open on a non-private window. 
+> You should also be accessing the labs in the same private window. Otherwise, link from the lab will be open on a non-private window. 
 
 As part of the exercises mentioned in this lab guide, you will create an environment using an automated deployment based on ARM template.
 An ARM template is a JavaScript Object Notation (JSON) file that defines the infrastructure and configuration for your project. The template uses declarative syntax, which lets you state what you intend to deploy without having to write the sequence of programming commands to create it.
@@ -71,7 +58,10 @@ Continue with the exercise below until the deployment has completed.
 
 1. Prepare your lab environment by clicking on the blue **Deploy to Azure** button below:
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Security-Center%2Fmaster%2FLabs%2FFiles%2Flabdeploy.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton"/></a>
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure%2FAzure-Security-Center%2Fmaster%2FLabs%2FFiles%2Flabdeploy.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton"/></a>
+
+
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjohndohoneyjr%2FLevel-Up-Container-Security-and-ACR-Scaling%2Frefs%2Fheads%2Fmain%2FLevelUp-Labs%2FFiles%2Flabdeploy.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton"/></a>
 
 2.	You will be redirected to Azure Portal > custom deployment page where you should specify mandatory fields for deployment.
 3.	On the subscription field, select **Azure subscription 1**.
