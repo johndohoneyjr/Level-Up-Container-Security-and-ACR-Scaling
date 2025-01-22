@@ -63,7 +63,7 @@
         "kvName": "[toLower(concat('asclab-kv-',uniqueString(subscription().subscriptionId, utcNow())))]",
         "containerRegistryName": "[toLower(concat('asclabcr', uniqueString(subscription().subscriptionId, utcNow())))]",
 
-        "aksClusterName": "asclab-aks", "[toLower(concat('asclab-aks-', uniqueString(subscription().subscriptionId, utcNow())))]",
+        "aksClusterName": "[toLower(concat('asclab-aks-', uniqueString(subscription().subscriptionId, utcNow())))]",
         "aksVersion": "1.31.1",
         "aksDNSPrefix": "asclab-aks",
         "aksNetworkPlugin": "kubenet"
