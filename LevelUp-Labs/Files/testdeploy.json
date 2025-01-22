@@ -332,12 +332,23 @@
                     "family": "A",
                     "name": "premium"
                 },
-                "tenantId": "[subscription().tenantid]",
+                "tenantId": "[subscription().tenantId]",
                 "enabledForDeployment": false,
                 "enabledForDiskEncryption": false,
-                "enabledForTemplateDeployment": false
+                "enabledForTemplateDeployment": false,
+                "accessPolicies": [
+                    {
+                        "tenantId": "[subscription().tenantId]",
+                        "objectId": "[user().objectId]",
+                        "permissions": {
+                            "keys": ["get", "list", "create", "delete", "recover", "backup", "restore"],
+                            "secrets": ["get", "list", "set", "delete", "recover", "backup", "restore"],
+                            "certificates": ["get", "list", "delete", "create", "import", "update", "managecontacts", "getissuers", "listissuers", "setissuers", "deleteissuers"],
+                            "storage": ["get", "list", "delete", "set", "update", "regeneratekey", "setsas", "listsas", "getsas", "deletesas"]
+                        }
+                    }
+                ]
             },
-
             "tags": "[parameters('resourceTags')]"
         },
         {
