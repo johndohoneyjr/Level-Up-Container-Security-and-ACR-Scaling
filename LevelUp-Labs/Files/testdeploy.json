@@ -60,9 +60,9 @@
             }
         },
         "storageName": "[toLower(concat('asclabsa', uniqueString(subscription().subscriptionId, resourceGroup().id, deployment().name)))]",
-        "kvName": "[toLower(concat('asclab-kv-', uniqueString(subscription().subscriptionId, newGuid())))]",
-        "containerRegistryName": "[toLower(concat('asclabcr', uniqueString(subscription().subscriptionId, newGuid())))]",
-        "aksClusterName": "[toLower(concat('asclab-aks-', uniqueString(subscription().subscriptionId, newGuid())))]",
+        "kvName": "[toLower(concat('asclabs-kv-', uniqueString(subscription().subscriptionId, resourceGroup().id, deployment().name)))]",
+        "containerRegistryName": "[toLower(concat('asclabcr', uniqueString(subscription().subscriptionId, resourceGroup().id, deployment().name)))]",
+        "aksClusterName": "[toLower(concat('asclabs-aks-', uniqueString(subscription().subscriptionId, resourceGroup().id, deployment().name)))]",
         "aksVersion": "1.31.2",
         "aksDNSPrefix": "asclab-aks",
         "aksNetworkPlugin": "kubenet"
