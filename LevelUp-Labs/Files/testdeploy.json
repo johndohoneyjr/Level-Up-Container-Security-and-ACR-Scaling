@@ -35,7 +35,7 @@
         }
     },
     "variables": {
-        "workspaceName": "[toLower(concat('asclab-la-',uniqueString(subscription().subscriptionId, utcNow())))]",
+        "workspaceName": "[toLower(concat('asclab-la-',uniqueString(subscription().subscriptionId)))]",
         "workspaceSKU": "PerGB2018",
         "vmNameLinux": "asclab-linux",
         "vmSize": "Standard_B1ms",
