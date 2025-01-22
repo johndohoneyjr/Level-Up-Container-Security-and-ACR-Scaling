@@ -59,11 +59,11 @@
                 "publisher": "Microsoft"
             }
         },
-        "storageName": "[toLower(concat('asclabsa', utcNow()))]",
-        "kvName": "[toLower(concat('asclab-kv-',utcNow()))]",
-        "containerRegistryName": "[toLower(concat('asclabcr', uniqueString(subscription().subscriptionId, utcNow())))]",
+        "storageName": "[toLower(concat('asclabsa', uniqueString(subscription().subscriptionId, newGuid()))]",
+        "kvName": "[toLower(concat('asclab-kv-', uniqueString(subscription().subscriptionId, newGuid())))]",
+        "containerRegistryName": "[toLower(concat('asclabcr', uniqueString(subscription().subscriptionId, newGuid())))]",
+        "aksClusterName": "[toLower(concat('asclab-aks-', uniqueString(subscription().subscriptionId, newGuid())))]",
 
-        "aksClusterName": "[toLower(concat('asclab-aks-', uniqueString(subscription().subscriptionId, utcNow())))]",
         "aksVersion": "1.31.1",
         "aksDNSPrefix": "asclab-aks",
         "aksNetworkPlugin": "kubenet"
