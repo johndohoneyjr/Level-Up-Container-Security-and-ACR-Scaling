@@ -59,8 +59,8 @@
                 "publisher": "Microsoft"
             }
         },
-        "storageName": "[toLower(concat('asclabsa', uniqueString(subscription().subscriptionId, utcNow())))]",
-        "kvName": "[toLower(concat('asclab-kv-',uniqueString(subscription().subscriptionId, utcNow())))]",
+        "storageName": "[toLower(concat('asclabsa', utcNow()))]",
+        "kvName": "[toLower(concat('asclab-kv-',utcNow()))]",
         "containerRegistryName": "[toLower(concat('asclabcr', uniqueString(subscription().subscriptionId, utcNow())))]",
 
         "aksClusterName": "[toLower(concat('asclab-aks-', uniqueString(subscription().subscriptionId, utcNow())))]",
