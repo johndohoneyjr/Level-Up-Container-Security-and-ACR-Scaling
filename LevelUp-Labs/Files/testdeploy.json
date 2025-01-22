@@ -69,6 +69,7 @@
         "kvName": "[toLower(concat('asclabs-kv-', uniqueString(subscription().subscriptionId, resourceGroup().id, deployment().name)))]",
         "containerRegistryName": "[toLower(concat('asclabcr', uniqueString(subscription().subscriptionId, resourceGroup().id, deployment().name)))]",
         "aksClusterName": "[toLower(concat('asclabs-aks-', uniqueString(subscription().subscriptionId, resourceGroup().id, deployment().name)))]",
+        "publicIpDnsName": "[toLower(concat('asclab-', uniqueString(subscription().subscriptionId, resourceGroup().id, deployment().name, 'dns')))]",
         "aksVersion": "1.31.2",
         "aksDNSPrefix": "asclab-aks",
         "aksNetworkPlugin": "kubenet"
@@ -171,13 +172,13 @@
         {
             "apiVersion": "2018-08-01",
             "type": "Microsoft.Network/publicIPAddresses",
-            "name": "[concat(variables('vmNameLinux'), '-pip')]",
+            "name": "[variables('publicIpName')]",
             "location": "[resourceGroup().location]",
             "tags": "[parameters('resourceTags')]",
             "properties": {
                 "publicIPAllocationMethod": "Dynamic",
                 "dnsSettings": {
-                    "domainNameLabel": "[toLower(concat(variables('vmNameLinux'), uniqueString(subscription().subscriptionId)))]"
+                    "domainNameLabel": "[variables('publicIpName')]",
                 }
             }
         },
