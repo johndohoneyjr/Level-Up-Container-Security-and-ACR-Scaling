@@ -29,8 +29,8 @@
         "resourceTags": {
             "type": "object",
             "defaultValue": {
-                "Demo": "ASC",
-                "ProvisionedBy": "CxE"
+                "Purpose": "LevelUp Learning",
+                "ProvisionedBy": "ARM-Template"
             }
         }
     },

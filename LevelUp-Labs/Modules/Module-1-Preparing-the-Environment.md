@@ -58,8 +58,8 @@ Continue with the exercise below until the deployment has completed.
 
 1. Prepare your lab environment by clicking on the blue **Deploy to Azure** button below:
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure%2FAzure-Security-Center%2Fmaster%2FLabs%2FFiles%2Flabdeploy.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton"/></a>
 
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjohndohoneyjr%2FLevel-Up-Container-Security-and-ACR-Scaling%2Frefs%2Fheads%2Fmain%2FLevelUp-Labs%2FFiles%2Ftestdeploy.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton"/></a>
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjohndohoneyjr%2FLevel-Up-Container-Security-and-ACR-Scaling%2Frefs%2Fheads%2Fmain%2FLevelUp-Labs%2FFiles%2Flabdeploy.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton"/></a>
 
