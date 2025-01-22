@@ -330,21 +330,9 @@
             "properties": {
                 "sku": {
                     "family": "A",
-                    "name": "standard"
+                    "name": "premium"
                 },
                 "tenantId": "[subscription().tenantid]",
-                "accessPolicies": [
-                    {
-                        "tenantId": "[subscription().tenantid]",
-                        "permissions": {
-                            "keys": [],
-                            "secrets": [
-                                "get"
-                            ],
-                            "certificates": []
-                        }
-                    }
-                ],
                 "enabledForDeployment": false,
                 "enabledForDiskEncryption": false,
                 "enabledForTemplateDeployment": false
