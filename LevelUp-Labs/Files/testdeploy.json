@@ -2,6 +2,12 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+        "objectId": {
+            "type": "string",
+            "metadata": {
+                "description": "The Object ID of the user or service principal that needs access to the Key Vault."
+            }
+        },
         "username": {
             "type": "string",
             "defaultValue": "ascadmin",
@@ -339,7 +345,7 @@
                 "accessPolicies": [
                     {
                         "tenantId": "[subscription().tenantId]",
-                        "objectId": "[user().objectId]",
+                        "objectId": "[parameters('objectId')]",
                         "permissions": {
                             "keys": ["get", "list", "create", "delete", "recover", "backup", "restore"],
                             "secrets": ["get", "list", "set", "delete", "recover", "backup", "restore"],
