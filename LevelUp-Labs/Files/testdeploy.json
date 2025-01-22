@@ -35,7 +35,7 @@
         }
     },
     "variables": {
-        "workspaceName": "[toLower(concat('asclab-la-',uniqueString(subscription().subscriptionId)))]",
+        "workspaceName": "[toLower(concat('asclab-la-',uniqueString(subscription().subscriptionId, utcNow())))]",
         "workspaceSKU": "PerGB2018",
         "vmNameLinux": "asclab-linux",
         "vmSize": "Standard_B1ms",
@@ -59,15 +59,11 @@
                 "publisher": "Microsoft"
             }
         },
-        "storageName": "[toLower(concat('asclabsa', uniqueString(subscription().subscriptionId)))]",
-        "appServicePlanName": "asclab-splan",
-        "appServiceName": "[toLower(concat('asclab-app-', uniqueString(subscription().subscriptionId)))]",
-        "kvName": "[toLower(concat('asclab-kv-',uniqueString(subscription().subscriptionId)))]",
-        "functionName": "[toLower(concat('asclab-fa-',uniqueString(subscription().subscriptionId)))]",
-        "containerRegistryName": "[toLower(concat('asclabcr', uniqueString(subscription().subscriptionId)))]",
-        "sqlServerName": "[toLower(concat('asclab-sql-',uniqueString(subscription().subscriptionId)))]",
-        "sqlDatabaseName": "asclab-db",
-        "aksClusterName": "asclab-aks",
+        "storageName": "[toLower(concat('asclabsa', uniqueString(subscription().subscriptionId, utcNow())))]",
+        "kvName": "[toLower(concat('asclab-kv-',uniqueString(subscription().subscriptionId, utcNow())))]",
+        "containerRegistryName": "[toLower(concat('asclabcr', uniqueString(subscription().subscriptionId, utcNow())))]",
+
+        "aksClusterName": "asclab-aks", "[toLower(concat('asclab-aks-', uniqueString(subscription().subscriptionId, utcNow())))]",
         "aksVersion": "1.31.1",
         "aksDNSPrefix": "asclab-aks",
         "aksNetworkPlugin": "kubenet"
