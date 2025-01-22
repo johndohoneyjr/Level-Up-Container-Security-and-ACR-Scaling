@@ -341,7 +341,6 @@
                 "accessPolicies": [
                     {
                         "tenantId": "[subscription().tenantid]",
-                        "objectId": "[reference(resourceId('Microsoft.Web/sites', variables('functionName')),'2019-08-01', 'full').identity.principalId]",
                         "permissions": {
                             "keys": [],
                             "secrets": [
@@ -355,9 +354,7 @@
                 "enabledForDiskEncryption": false,
                 "enabledForTemplateDeployment": false
             },
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', variables('appServiceName'))]"
-            ],
+
             "tags": "[parameters('resourceTags')]"
         },
         {
