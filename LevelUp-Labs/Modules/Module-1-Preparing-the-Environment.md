@@ -32,46 +32,33 @@ The following list of resources will be deployed during the provisioning process
 
 Name | Resource Type | Purpose
 -----| ------------- | -------
-asclab-win | Virtual machine | Windows Server
 asclab-linux | Virtual machine | Linux Server
 asclab-as | Availability set | Availability set for the 2-VMs
 asclab-aks | Kubernetes service | Testing container services capabilities
-asclab-app-[uniqestring] | App Service | App service to be used for web app, function app
-asclab-sql-[uniqestring] | SQL server | To be using for the sample database
-asclab-as | SQL database | Sample database based on AdventureWorks template
-asclab-kv-[uniqestring] | Key vault | Demonstrating Key Vault related recommendations and security alerts
-asclab-fa-[uniqestring] | Function App | Demonstrating related built-in and custom security recommendations
+asclab-kv-[uniqestring] | Key vault | Demonstrating Key Vault 
 asclab-la-[uniqestring]	| Log Analytics workspace | Log Analytics workspace used for data collection and analysis, storing logs and continuous export data
-asclab-nsg | Network security group | Required for Just-in-Time access and security recommendations
-asclab-splan | App Service plan | Demonstrating related security recommendations
+asclab-nsg | Network security group | Required for Just-in-Time access 
 asclab-vnet | Virtual network | Default virtual network for both Azure VM and for network related recommendations
-asclabcr[uniqestring] | Container registry | Demonstrating related security recommendations
-asclabsa[uniqestring] | Storage account | Demonstrating related security recommendations
+asclabcr[uniqestring] | Container registry | For Image testing
+asclabsa[uniqestring] | Storage account | Later Use
 SecurityCenterFree | Solution | Default workspace solution used for Microsoft Defender for Cloud free tier
 
 After the deployment of the template, you can check the progress of your deployment if you click on your created resource group details, then click on Deployments (1 deploying).
 Continue with the exercise below until the deployment has completed.
-<br><br>
-
-<img src="../Images/asc-lab-architecture.svg?raw=true">
-<br>
 
 1. Prepare your lab environment by clicking on the blue **Deploy to Azure** button below:
-
-
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjohndohoneyjr%2FLevel-Up-Container-Security-and-ACR-Scaling%2Frefs%2Fheads%2Fmain%2FLevelUp-Labs%2FFiles%2Ftestdeploy.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton"/></a>
-
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjohndohoneyjr%2FLevel-Up-Container-Security-and-ACR-Scaling%2Frefs%2Fheads%2Fmain%2FLevelUp-Labs%2FFiles%2Flabdeploy.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton"/></a>
 
 2.	You will be redirected to Azure Portal > custom deployment page where you should specify mandatory fields for deployment.
 3.	On the subscription field, select **Azure subscription 1**.
 4.	On the resource group field, click on **Create new** and name it as **asclab** (you can pick any name you want or keep the default).
-5.	On the parameters section, select the closest data center **region** to your current location (all downstream resources will be created in the same region as the resource group).
-6. Select a password that will be used across services (such as credentials for virtual machines and SQL database)
+5. ObjectID Field will come from Entra | Users, find your user ID and copy the Object ID value
+6.	On the parameters section, select the closest data center **region** to your current location (all downstream resources will be created in the same region as the resource group). **Note: CanadaCentral and WestUS2 worked in terms of resource capacity**
+7. Select a password that will be used across services (such as credentials for virtual machines and SQL database)
 > ❗ Important: <br>
 > Notice that password must be between 12 and 72 characters and have 3 of the following: 1 lower case, 1 upper case, 1 number and 1 special character. Failure to do so will result in deployment failures.  
-7.	Click **Review + create** to start the validation process. Once validation passed, click on **Create** to start the ARM deployment on your subscription.
-8.	The deployment takes about **10 minutes** to complete.<br>
+8.	Click **Review + create** to start the validation process. Once validation passed, click on **Create** to start the ARM deployment on your subscription.
+9.	The deployment takes about **3-5 minutes** to complete.<br>
 
 > The *deployment is in progress* page continues to update and show the resources being uploaded to the environment assuming the deployment is successful.  
 > During the deployment, additional resource group will be created automatically for Kubernetes resources named as “asclab-aks”.<br>
