@@ -1,0 +1,101 @@
+# Module 4 - Image Signing
+
+
+#### ⌛ Estimated time to complete this lab: 30 minutes
+
+## Objectives
+This exercise guides you on how to use Notation to sign images once they have undergone hardening by removing vulnerabilities.
+
+**Step-1: SetUp**
+
+Run the following commands from a Powersheel to establish the lab environment.
+
+```pwsh
+$RG = "MyCodeSigning-Rg"
+$LOC = "westus"
+$ACR_NAME = "hashlab$(Get-Random)"
+
+az login
+
+az group create -n $RG -l $LOC
+az acr create -g $RG -n $ACR_NAME --sku Standard
+az acr login -n $ACR_NAME
+```
+
+Opposed to building a Dockerfile from scratch, we will import a public image into our repository.  Signing the image, is the same whether you build from scratch or import into a registry.  Note: As we saw in the Vulnerability Lab, it is a good idea to understand the vulnerabilies we are dealing with before we sign and allow an image to run on a production environment.
+
+```
+# For later testing, lets also import an unsigned image
+docker pull nginx:latest
+docker tag nginx "$ACR_NAME.azurecr.io/nginx:latest"
+docker buildx imagetools inspect "$ACR_NAME.azurecr.io/nginx:latest"
+
+docker push "$ACR_NAME.azurecr.io/nginx:latest"
+```
+
+**Step-2: Install Notation**
+
+Note: If winget is not installed, download and install it from the Microsoft Store.
+
+Windows
+```
+winget install notation -s winget
+```
+
+Mac
+```
+brew install notation
+```
+
+Complete information on Notary and Notation can be found at: https://notaryproject.dev/docs/notary-project-overview/
+
+Install the Azure Key Vault Plugin we will use later
+
+Windows
+```
+notation plugin install --url https://github.com/Azure/notation-azure-kv/releases/download/v1.2.1/notation-azure-kv_1.2.1_windows_amd64.zip --sha256sum 416eb490a83e8371407cbff1abe0588c84b8cdd34372f936cb1f913b7d0da8c1
+
+notation plugin ls
+```
+
+Mac Silicon
+```
+notation plugin install --url https://github.com/Azure/notation-azure-kv/releases/download/v1.2.1/notation-azure-kv_1.2.1_darwin_arm64.tar.gz --sha256sum bf6e07fdf309c194c99870c8a2a326fa14f9f7572fcf61948d1fcb3249ab3285
+
+notation plugin ls
+```
+
+Mac Intel
+```
+notation plugin install --url https://github.com/Azure/notation-azure-kv/releases/download/v1.2.1/notation-azure-kv_1.2.1_darwin_amd64.tar.gz --sha256sum 4c360d362a9448b46f98046257d5b270b2c5b1beb04c14263e59cead898902c9
+
+notation plugin ls
+```
+
+**Step-3 Image Signing (Simple)**
+
+```
+IMAGE_SHA=$(az acr repository show -n $ACR_NAME --image "nginx:latest" -o tsv --query digest)
+
+echo $IMAGE_SHA
+```
+
+Next, we will use Notation to inspect the image for signatures
+```
+notation ls "$ACR_NAME.azurecr.io/nginx@$IMAGE_SHA"
+```
+
+Before we can sign an image, we need to have an RSA Key, we will use notation to generate a self-sign certificate
+
+```
+notation cert generate-test --default "contoso.info"
+```
+
+Get simple and detailed information about the certificate
+```
+notation cert ls
+
+notation cert show -t ca -s contoso.info contoso.info.crt
+```
+
+
